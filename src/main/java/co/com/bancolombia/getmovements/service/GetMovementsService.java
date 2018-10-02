@@ -2,28 +2,19 @@ package co.com.bancolombia.getmovements.service;
 
 import java.util.ArrayList;
 
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import com.squareup.okhttp.ResponseBody;
 
-import co.com.bancolombia.getmovements.models.Data;
 import co.com.bancolombia.getmovements.models.DataResponse;
 import co.com.bancolombia.getmovements.models.HeaderResponse;
 import co.com.bancolombia.getmovements.models.RequestService;
 import co.com.bancolombia.getmovements.models.ResponseService;
 import co.com.bancolombia.getmovements.restservices.RestClient;
-import net.minidev.json.parser.JSONParser;
 
 @Component
 public class GetMovementsService {

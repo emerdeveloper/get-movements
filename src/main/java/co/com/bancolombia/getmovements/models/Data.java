@@ -1,7 +1,5 @@
 package co.com.bancolombia.getmovements.models;
 
-import java.util.ArrayList;
-
 public class Data {
 	private Header header;
 

@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.squareup.okhttp.ResponseBody;
-
-import co.com.bancolombia.getmovements.models.Data;
 import co.com.bancolombia.getmovements.models.RequestService;
 import co.com.bancolombia.getmovements.models.ResponseService;
 import co.com.bancolombia.getmovements.service.GetMovementsService;

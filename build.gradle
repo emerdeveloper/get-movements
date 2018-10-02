@@ -7,6 +7,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('se.transmode.gradle:gradle-docker:1.2')
 	}
 }
 
@@ -14,10 +15,27 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'docker'
+jar {
+    baseName = 'get-movements'
+    version =  'version.20180927.1'
+}
 
-group = 'co.com.bancolombia'
-version = '0.0.1-SNAPSHOT'
+group = 'registry.ng.bluemix.net/negocios_bancolombia'
 sourceCompatibility = 1.8
+version = 'version.20180927.1'
+
+task buildDocker(type: Docker, dependsOn: build) {
+  push = false
+  applicationName = jar.baseName
+  dockerfile = file('src/main/docker/Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into stageDir
+    }
+  }
+}
 
 repositories {
 	mavenCentral()
